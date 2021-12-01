@@ -2,10 +2,8 @@ import cv2
 import numpy as np
 
 # Path to config and weight
-# PATH_TO_CONFIG = 'ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt'
-# PATH_TO_WEIGHT = 'frozen_inference_graph.pb'
-PATH_TO_CONFIG = 'conf.cfg'
-PATH_TO_WEIGHT = 'yolov3 (1).weights'
+PATH_TO_CONFIG = 'ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt'
+PATH_TO_WEIGHT = 'frozen_inference_graph.pb'
 
 cap = cv2.VideoCapture(0) # 0 stands for webcam placement in the usb port
 cap.set(3,640)
@@ -39,4 +37,4 @@ while True:
             cv2.putText(img,classNames[classID-1],(box[0]+10,box[1]+30),cv2.FONT_HERSHEY_SIMPLEX,2,(0,255,0),2)
 
     cv2.imshow("Img",img)
-    cv2.waitKey(25)
+    cv2.waitKey()
